@@ -1,0 +1,35 @@
+Explicación Detallada del Funcionamiento
+
+//Importar Numpy:
+import numpy as np: Importa la biblioteca Numpy para operaciones matemáticas.
+
+//Definición de Función para Ingresar Matrices:
+def ingresar_matriz(nombre): Define una función para ingresar una matriz de nombre especificado.
+matriz = []: Inicializa una lista vacía para almacenar la matriz.
+for i in range(3):Itera sobre las filas de la matriz.
+for j in range(3):Itera sobre las columnas de la matriz.
+elemento = float(input(...)): Solicita y convierte el elemento ingresado a tipo flotante 
+Un elemento flotante en Python se refiere a un número que tiene una parte decimal.
+fila.append(elemento): Agrega el elemento a la fila actual.
+matriz.append(fila): Agrega la fila completa a la matriz.
+return np.array(matriz): Convierte la lista de listas a un arreglo Numpy y lo retorna.
+
+//Definición de Función para Calcular Inversa:
+def calcular_inversa(matriz): Define una función para calcular la inversa de una matriz.
+inversa = np.linalg.inv(matriz): Intenta calcular la inversa de la matriz.
+return inversa: Retorna la inversa si es calculable.
+except np.linalg.LinAlgError: Captura la excepción si la matriz no es invertible.
+return None: Retorna None si la matriz no tiene inversa.
+
+//Ingreso de Matrices:
+matriz_a = ingresar_matriz("A"): Llama a la función para ingresar la matriz A.
+matriz_b = ingresar_matriz("B"): Llama a la función para ingresar la matriz B.
+
+//Multiplicación y Visualización:
+producto = np.dot(matriz_a, matriz_b): Calcula el producto de las matrices A y B.
+print(producto): Imprime el producto de las matrices.
+inversa_producto = calcular_inversa(producto): Calcula la inversa del producto.
+if inversa_producto is not None: Verifica si la inversa existe.
+print(inversa_producto): Imprime la inversa del producto si existe.
+else: Si la inversa no existe.
+print("El producto de las matrices no tiene inversa."): Muestra un mensaje indicando que la inversa no existe.
